@@ -5,7 +5,7 @@
         <li v-for="(row, index) in rows">
           <p>name : <input type="text" /></p>
           <p>job : <input type="text" /></p>
-          <a @click="removeRow(row)">Remove</a>
+          <a @click="removeRow(index)">Remove</a>
         </li>
       </ul>
       <div>
@@ -29,7 +29,7 @@ export default {
       this.rows.push({ name: "", job: "" });
     },
     removeRow: function(row) {
-      this.rows.$remove(row);
+      this.rows.splice(index, 1);
     }
   },
   computed: {}
